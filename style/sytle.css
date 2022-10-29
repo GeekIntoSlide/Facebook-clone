@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.login-div{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    width: 80%;
+    margin: 150px auto;
+}
+body{
+    overflow: hidden;
+    background-color: #c4cde0;
+}
+.logo h1{
+color: #3b5998;
+font-size: 36px;
+font-weight: 900;
+}
+.logo p{
+    font-size: 24px;
+}
+.login-form{
+background-color: #ebeef5;
+box-shadow: 1px solid #c4cde0;
+border-radius: 5px;
+}
+.login-form input{
+    display: block;
+    height: 35px;
+    width: 90%;
+    margin: 5px auto;
+    border-radius: 5px;
+    border: 1px solid #d8deea;
+    padding: 5px;
+}
+.login-form button
+{
+    display: block;
+}
+.login-form .login
+{
+    width: 90%;
+    margin: 15px auto;
+   height: 40px;
+    background-color: #3b5998;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #d8deea;
+    font-weight: 900;
+    cursor: pointer;
+}
+.login-form .forgot
+{
+    width: 90%;
+    margin: 15px auto;
+   height: 40px;
+    background-color: white;
+    color: #3b5998;
+    border-radius: 5px;
+    border: 1px solid #d8deea;
+    font-weight: 900;
+    cursor: pointer;
+}
+.login-form .signup
+{
+    width: 50%;
+    margin: 15px auto;
+   height: 40px;
+    background-color: #75b940;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #d8deea;
+    font-weight: 900;
+    cursor: pointer;
+}
+.forgotHeader{
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    background-color: white;
+}
+.forgotHeader input{
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #d8deea;
+}
+.forgotHeader button{
+    height: 40px;
+}
+.forgotHeader h1{
+    color: #3b5998;
+    margin-left: 10px;
+}
+.forgotHeader button:nth-of-type(1)
+{
+    background-color: #3b5998;
+    border-radius: 5px;
+    color: white;
+    width: 10%;
+    border: none;
+   cursor: pointer;
+}
+.forgotHeader button:nth-of-type(2)
+{
+    background-color: white;
+    color: #3b5998;
+    border: none;
+    cursor: pointer;
+}
+.forgot-form
+{
+    width: 50%;
+    margin: 100px auto;
+   
+    background-color: white;
+}
+.heading{
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #d8deea;
+
+}
+.para{
+    background-color: white;
+    padding: 10px;
+    
+    font-size: 24px;
+}
+.forgot-form input{
+    width: 50%;
+    margin: 0 auto;
+    height: 35px;
+    border: none;
+    padding: 10px;
+}
+.forgot-form button{
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    margin-left: 20px;
+    border: none;
+}
+.blue 
+{
+    background-color: #3b5998;
+    color: white;
+    font-weight: 700;
+}
+/* ___________________________________________________________________________________________________________________________________ */
+/* Signup */
+.neme{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    
+}
+.signup-form
+{
+    background-color: white;
+    width: 40%;
+    margin: 75px auto;
+    border-radius: 5px;
+}
+.topHeading{
+    font-size: 48px;
+    text-align: center;
+    position: relative;
+    top:50px;
+    color: #3b5998;
+}
+.signup-form h2{
+    text-align: center;
+    padding: 10px;
+    font-size: 24px;
+}
+.name{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.name input{
+    width: 90%;
+    height: 35px;
+    margin: 5px auto;
+    border-radius: 5px;
+   border: 1px solid #d8deea;
+}
+.idField
+{
+    width: 95%;
+    margin: 0 auto;
+}
+.idField input{
+   width: 100%;
+    height: 35px;
+    margin: 5px auto;
+    border-radius: 5px;
+   border: 1px solid #d8deea;
+}
+.date-gen{
+    width: 95%;
+    margin: 0 auto;
+}
+.date p{
+    color: grey;
+}
+.date input{
+width: 95%;
+height: 35px;
+}
+.coll-button button{
+    width: 100%;
+    height: 40px;
+    margin: 5px;
+    border: none;
+}
+.coll-button button:nth-of-type(1)
+{
+    background-color:#75b940;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
