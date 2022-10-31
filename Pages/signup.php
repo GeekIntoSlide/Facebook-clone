@@ -1,3 +1,67 @@
+<?php
+error_reporting(-1);
+ini_set('display_errors', 'On');
+set_error_handler("var_dump");
+
+?>
+<?php
+include("../function/db.php");
+include("../function/session.php");
+include("../function/redirect.php");
+include("../function/userExist.php")
+?>
+<?php
+if(isset($_POST['signupButton']))
+{
+    $fullName=$_POST['firstName']." ".$_POST['lastName'];
+    $email=$_POST['userId'];
+    $password=$_POST['password'];
+    $dob=$_POST['dateOfBirth'];
+    $gender=$_POST['gender'];
+
+    if(empty($fullName)||empty($email)||empty($password)||empty($dob)||empty($gender))
+    {
+     $_SESSION['errorMessage']="All input must be filled";   
+     redirectFunction("signup.php");
+    }
+    elseif (userExist($email)) {
+     $_SESSION['errorMessage']="User Id not available";
+     redirectFunction("signup.php");
+    }
+    else
+    {
+     
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    }
+        $_SESSION['email']=$email;
+        $_SESSION['fullName']=$fullName;
+        $_SESSION['password']=$password;
+        $_SESSION['gender']=$gender;
+        $_SESSION['dob']=$dob;
+        
+        $from="kraghuvanshi435@gmail.com";
+        $to=$email;
+        $subject="Security code for verification";
+        $otp=rand(100000,999999);
+        $message=strval($otp);
+        $headers="From:kraghuvanshi435@gmail.com";
+        
+        if(mail($to,$subject,$message,$headers))
+        {
+            $_SESSION['OTP']=$otp;
+            redirectFunction("otp.php");
+
+        }
+        else{
+            $_SESSION['errormessage']="Otp send failed";
+        }
+
+    }
+    
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +72,10 @@
     <title>Signup</title>
 </head>
 <body>
+    <h2 style="text-align:center;font-size:24px;"><?php echo errorMessage()?></h2>
+    <h2 style="text-align:center;font-size:24px;"><?php echo successMessage()?></h2>
   <h2 class="topHeading">Facebook</h2>
-    <form>
+    <form method="post" action="signup.php">
         <div class="signup-form">
             <h2>Create new account</h2>
             <p style="text-align:center; font-size:18px">It's easy and quick</p>

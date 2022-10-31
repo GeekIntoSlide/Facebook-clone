@@ -221,3 +221,128 @@ height: 35px;
     border-radius: 5px;
     cursor: pointer;
 }
+/* OTP Page */
+.otpForm
+{
+    align-items: center;
+    width: 40%;
+    margin: 150px auto;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 5px solid c4cde0;
+}
+.otp-col
+{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.otpForm h1{
+    padding: 20px;
+    border: 1px solid #c4cde0;
+}
+.otpForm p{
+    padding: 10px;
+    
+}
+.otpForm input{
+    width: 90%;
+    margin-left: 10px;
+    border-radius: 5px;
+    height: 35px;
+    border: 1px solid #c4cde0;
+}
+.static-otp p
+{
+    display: inline-block;
+font-size: 16px;
+text-align: center;
+position: relative;
+top:-10px;
+}
+.static-otp p:nth-of-type(2)
+{
+    position: relative;
+    top: -30px;
+}
+.otpButton
+{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+}
+.otpButton{
+
+    position: relative;
+    top:-30px;
+    height: 20px;
+}
+.otpButton p{
+    color: #3b5998;
+    cursor: pointer;
+}
+.otpButton button{
+    width: 40%;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* ************************************ */
+/* updatepassword page */
+
+.updateForm
+{
+    width: 50%;
+    margin: 0 auto;
+    align-items: center;
+    background-color: #c4cde0;
+    box-shadow: 5px solid #d8deea;
+}
+.updateForm h1{
+   
+    text-align: center;
+}
+.updateForm p{
+    text-align: center;
+}
+.updateForm  label
+{
+    display: block;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.updateItemForm
+{
+background-color: white;
+width: 50%;
+margin: 30px auto;
+}
+.updateItemForm input
+{
+    display: block;
+    width: 90%;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+.updateItemForm button
+{
+    height: 40px;
+    width: 90%;
+    margin: 5px auto;
+    border-radius: 5px;
+    border: 1px solid #c4cde0;
+    display: block;
+    cursor: pointer;
+}
+.updateItemForm button:nth-of-type(1)
+{
+    background-color: #3b5998;
+    color: white;
+}
