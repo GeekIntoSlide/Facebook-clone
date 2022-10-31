@@ -5,3 +5,149 @@ body{
     margin: 0;
     padding: 0;
 }
+.header
+{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 5px solid #c4cde0;
+}
+.logo h1 i{
+    margin: 10px;
+color: #3b5998;
+cursor: pointer;
+}
+.search input
+{
+    width: 100%;
+    height: 35px;
+    border-radius: 15px;
+    border: none;
+    margin: 10px;
+  background-color: #c4cde0;
+}
+.buttonColl button{
+    margin-right: 40px;
+    margin-top: 20px;
+    float: right;
+    transform: scale(2);
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+    
+}
+.main
+{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: aliceblue;
+
+}
+.col1{
+    background-color: aliceblue;
+    height: 100vh;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+.col1 h4 {
+    margin: 20px 10px;
+    cursor: pointer;
+    width: 100%;
+    height: 35px;
+    font-weight: 400;
+}
+.col1 h4 i{
+    margin: 0 10px;
+}
+.col1 h4 i :nth-of-type(1)
+{
+    color: #3b5998;
+}
+.userData
+{
+    width: 90%;
+    margin: 30px auto;
+    border-radius: 5px;
+
+    
+}
+.col3
+{
+    text-align: center;
+    position: sticky;
+    top: 0;
+    background-color: aliceblue;
+}
+.col3 h3{
+    margin-top: 30px;
+}
+.col3 h4 i{
+    margin: 0 10px; 
+    box-shadow: 0 0 10px solid black;
+}
+.col3 h4
+{
+    cursor: pointer;
+}
+.storySection
+{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    justify-content: space-between;
+    margin: 10px;
+}
+.storyUpload{
+    width: 100%;
+    height: 150px;
+    background-color: aqua;
+    border-radius: 10px;
+  
+}
+.storyUploded{
+
+    width: 33.33%;
+    height: 150px;
+    background-color: aqua;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+.story
+{
+    background-color: black;
+    height: 200px;
+    border-radius: 10px;
+}
+.story h4{
+    text-align: center;
+    color: white;
+}
+.userPost
+{
+    width: 90%;
+    margin: 30px auto;
+    border-radius: 5px;
+    background-color: aqua;
+    height: 20vh;
+
+    
+}
+.postFill  i{
+    box-shadow: 0 0 0 10px rgba(0,0, 0,0.2);
+ border-radius: 50%;
+background-color: gray;
+color: aliceblue;
+}
+.postFill{
+    padding: 10px;
+    background-color: blue;
+    height: 10vh;
+}
+.storyPhoto button
+{
+width: 100%;
+height: 5vh;
+}

@@ -22,5 +22,40 @@
         <button type="submit"><i class="fa-regular fa-user"></i></button>
     </div>
 </div>
+<div class="main">
+    <div class="col1">
+        <h4><i class="fa-sharp fa-solid fa-house" style="color:#3b5998 ;"></i> Home</h4>
+        <h4><i class="fa-regular fa-user"></i>Profile</h4>
+        <h4><i class="fa-sharp fa-solid fa-bars"></i>Menu</h4>
+        <h4><i class="fa-sharp fa-solid fa-user-group" style="color:#3b5998 ;"></i>Friends</h4>
+        <h4><i class="fa-solid fa-people-group"></i>Groups</h4>
+    </div>
+    <div class="col2">
+       <div class="userData">
+        <div class="story">
+            <h4>Stories</h4>
+        <div class="storySection">
+            <div class="storyUpload">hello</div>
+            <div class="storyUploded">hello</div>
+        </div>
+       </div>
+       </div>
+       <div class="userPost">
+        <div class="postFill">
+            <i class="fa-solid fa-user"></i>
+            <div style="display:inline;" class="postFillPara">
+             <p style="display:inline ;">What's on your mind username</p>
+            </div>
+        </div>
+        <div class="storyPhoto">
+            <button type="submit"><i></i>Photos/Videos</button>
+        </div>
+       </div>
+    </div>
+    <div class="col3">
+        <h3>Group Conversation</h3>
+        <h4><i class="fa-solid fa-plus"></i>Create new group</h4>
+    </div>
+</div>
 </body>
 </html>
