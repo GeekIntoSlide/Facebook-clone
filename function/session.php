@@ -23,5 +23,16 @@ function successMessage()
     } 
 }
 // $otp=$_SESSION["OTP"];
-
+function password_protected()
+{
+   if(isset($_SESSION['email']))
+   {
+      return true;
+      redirectFunction("homePage.php");    
+   }
+   else{
+      $_SESSION['errorMessage']="Login required";
+      redirectFunction("login.php");
+   }
+}
 ?>

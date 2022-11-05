@@ -131,8 +131,9 @@ cursor: pointer;
     margin: 30px auto;
     border-radius: 5px;
     background-color: aqua;
-    height: 20vh;
-
+    height: 18vh;
+    cursor: pointer;
+    display: grid;
     
 }
 .postFill  i{
@@ -143,11 +144,117 @@ color: aliceblue;
 }
 .postFill{
     padding: 10px;
-    background-color: blue;
     height: 10vh;
 }
 .storyPhoto button
 {
 width: 100%;
 height: 5vh;
+cursor: pointer;
 }
+.postFillPara
+{
+    position: relative;
+    left: 50px;
+    top:15px;
+    cursor: pointer;
+}
+.postFillPara p{
+    font-size: 24px;
+}
+.postFillPara i{
+    display: inline-block;
+    position: relative;
+    left: 25px;
+    top: 15px;
+}
+/* storyPopup */
+.storyPopup
+{
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.6);
+   position: absolute;
+   top: 0;
+   display: none;
+   justify-content: center;
+   align-items: center;
+   
+}
+.popupStory
+{
+    width: 500px;
+    height: 235px;
+    background-color: aliceblue;
+    position: relative;
+    border-radius: 5px;
+}
+.textArea
+{
+   position: relative;
+   top: 10px;
+   width: 100%;
+   border: none;
+
+}
+.postButton
+{
+    cursor: pointer;
+    width: 100%;
+    height: 35px;
+    margin-top: 5px;
+    border: none;
+    background-color: #3b5998;
+}
+/* text area extra css*/
+textarea#story {
+    -moz-appearance:none;
+    padding: 20px;
+    outline:0px none transparent;
+  }
+  
+  textarea:focus, input:focus{
+      outline: 0;
+  }
+  
+  *:focus {
+      outline: 0;
+  }
+  .fa-cross
+  {
+    position: relative;
+    left: 135px;
+    cursor: pointer;
+    
+  }
+  .errorClass
+  {
+    border: 2px solid #3b5998;
+    display: none;
+    text-align: center;
+    background-color: red;
+    color: black;
+    
+  }
+  .postShow
+  {
+    margin-top: 10px;
+    width: 100%;
+
+  }
+  .postArea
+  {
+    width: 90%;
+    margin: 5px auto;
+    background-color: #3b5998;
+  }
+  .postContent
+  {
+    margin:5px;
+  }
+  .likeShow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aqua;
+  }

@@ -17,7 +17,19 @@ if(isset($_POST['loginButton']))
        redirectFunction("login.php");
     }
     else if(loginUser($email,$password)){
-       redirectFunction("home.php");
+        global $connectionDB;
+        $sql="SELECT * from signupform WHERE email='$email' AND password='$password'";
+        $stmt=$connectionDB->query($sql);
+        while($DataRows=$stmt->fetch())
+        {
+            $name=$DataRows['name'];
+            $email=$DataRows['email'];
+        }
+        $stmt->execute();
+        $_SESSION['name']=$name;
+        $_SESSION['email']=$email;
+        error_log(json_encode($_SESSION));
+       redirectFunction("homePage.php");
     }
     else{
         $_SESSION['errorMessage']="Wrong credential";
