@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+   
+}
+body{
+    background-color: #c4cde0;
+}
+.commentSection{
+    width: 60%;
+    margin: 0 auto;
+    background-color: #293e6a;
+}

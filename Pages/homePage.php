@@ -10,7 +10,7 @@ if(!isset($_SESSION))
 { 
     session_start(); 
 }
-$name=$_SESSION['name'];
+$nameUser=$_SESSION['name'];
 $email=$_SESSION['email'];
 ?>
 <?php
@@ -73,7 +73,7 @@ $email=$_SESSION['email'];
 <div class="main">
     <div class="col1">
         <h4><i class="fa-sharp fa-solid fa-house" style="color:#3b5998 ;"></i> Home</h4>
-        <h4><i class="fa-regular fa-user"></i><?php echo $name?></h4>
+        <h4><i class="fa-regular fa-user"></i><?php echo $nameUser?></h4>
         <h4><i class="fa-sharp fa-solid fa-bars"></i>Menu</h4>
         <h4><i class="fa-sharp fa-solid fa-user-group" style="color:#3b5998 ;"></i>Friends</h4>
         <h4><i class="fa-solid fa-people-group"></i>Groups</h4>
@@ -105,24 +105,34 @@ $email=$_SESSION['email'];
        <div class="postContent">
         <?php
         global $connectionDB;
-        $sql="SELECT * FROM postdata WHERE email='$email'";
+        $sql="SELECT * FROM postdata ";
         $stmt=$connectionDB->query($sql);
         while($DataRow=$stmt->fetch())
         {
+            $id=$DataRow['id'];
             $name=$DataRow['name'];
             $content=$DataRow['postText'];
-            $like=$DataRow['likesGet'];
-            $comment=$DataRow['commentsGet'];
+            $like=$DataRow['likes'];
             ?>
+            <p><?php echo $id?></p>
             <p><?php echo $name?></p>
             <p><?php echo $content?></p>
             <div class="likeShow">
             <p>Likes<?php echo $like?></p>
-            <p>Comment<?php echo $comment?></p>
+            <?php
+            global $connectionDB;
+            $sql1="SELECT COUNT(*) FROM comments WHERE post_id='$id'";
+            $stmt1=$connectionDB->query($sql1);
+            while($DataRows=$stmt1->fetch())
+            {
+                $count=$DataRows[0];
+            }
+            ?>
+            <p>Comment<?php echo $count?></p>
             </div>
             <div class="likeButton">
-                <button type="button" name="likeButton" id="like" onclick="likeFn()" value="false">Like</button>
-                <button type="button" name="commentButton" id="comment">Comment</button>
+                <button type="button" name="likeButton" id="like" onclick="likeFn(<?php echo $id?>,<?php echo $like?>)" value="false">Like</button>
+                <button type="button" name="commentButton" id="comment" ><a href="comment.php?id=<?php echo $id?>">Comment</a></button>
             </div>
        <?php 
         
@@ -142,7 +152,7 @@ $email=$_SESSION['email'];
     <h1 style="text-align:center ;">Create post <i class="fa-sharp fa-solid fa-xmark fa-cross" id="crossButton"></i></h1>
 <div>
     <p class ="errorClass" id="demo"></p>
-    <textarea rows="10" cols="65" id="message" class="textArea" name="messag" placeholder="What's on your mind?<?php echo $name?>"></textarea>
+    <textarea rows="10" cols="65" id="message" class="textArea" name="messag" placeholder="What's on your mind?<?php echo $nameUser?>"></textarea>
     
 </div>
 <p id="success"></p>
@@ -150,6 +160,7 @@ $email=$_SESSION['email'];
 </div>
 </div>
 </form>
+
 <script type="text/javascript">
     document.getElementById("butt").addEventListener("click",function(){
         document.querySelector(".storyPopup").style.display="flex";
@@ -157,18 +168,20 @@ $email=$_SESSION['email'];
     document.getElementById("crossButton").addEventListener("click",function(){
         document.querySelector(".storyPopup").style.display="none";
     })
-    
+   
+   
+   
+   
     {
-    function likeFn()
+    function likeFn(id,cLike)
     {
-        var like=$('button#like').val();
-        
-        var fdata={like:like};
+        var fdata={id:id,cLike:cLike};
         $.ajax({url:"http://localhost/facebook/Pages/test.php",
         type:"POST",
         data:fdata,
         success:function(response)
-        {
+        { 
+            alert("likeupdated");
             
         }
         })
@@ -190,6 +203,7 @@ $email=$_SESSION['email'];
     })
       document.getElementById("success").innerHTML=postData;
     }
+
 </script>
 
 </body>
