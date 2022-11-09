@@ -11,3 +11,32 @@ body{
     margin: 0 auto;
     background-color: #293e6a;
 }
+/* Friend section */
+.friendSection{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    width: 80%;
+    margin: 30px auto;
+    gap: 10px;
+}
+.addedFriend
+{
+    background-color: white;
+}
+.searchFriend
+{
+    background-color: white;
+}
+.searchFriend input{
+    height: 35px;
+    width: 70%;
+    border: none;
+}
+.btn{
+    height: 35px;
+    width: 130px;
+    border: none;
+    color: white;
+    background-color: #293e6a;
+}

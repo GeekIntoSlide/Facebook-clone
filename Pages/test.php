@@ -60,4 +60,39 @@ if(isset($_POST['commentText']))
         error_log(json_encode($result));
     }
 }
+if(isset($_POST['to']))
+{
+    if(isset($_POST['name']))
+    {
+      if(isset($_POST['from']))
+      {
+          $fromUser=$_POST['from'];
+          $toUser=$_POST['to'];
+          $name=$_POST['name'];
+          global $connectionDB;
+          $sql="INSERT INTO friend(name,fromUser,toUser,statusUser)";
+          $sql.="VALUES(:namE,:froM,:tO,'P')";
+          $stmt=$connectionDB->prepare($sql);
+          $stmt->bindValue(':namE',$name);
+          $stmt->bindValue(':froM',$fromUser);
+          $stmt->bindValue(':tO',$toUser);
+          $result=$stmt->execute();
+
+      }
+    }
+   
+}
+if(isset($_POST['fromFriend']))
+{
+    if(isset($_POST['toFriend']))
+    {
+        $f=$_POST['fromFriend'];
+        $t=$_POST['toFriend'];
+        global $connectionDB;
+        $sql="UPDATE friend SET statusUser='F' WHERE fromUSer='$f' AND toUser='$t'";
+        $stmt=$connectionDB->query($sql);
+        $result=$stmt->execute();
+        error_log(json_encode($result));
+    }
+}
 ?>

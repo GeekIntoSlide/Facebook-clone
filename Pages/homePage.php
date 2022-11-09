@@ -3,7 +3,7 @@ include("../function/db.php");
 include("../function/userExist.php");
 include("../function/redirect.php");
 include("../function/session.php");
-// password_protected();
+password_protected();
 ?>
 <?php
 if(!isset($_SESSION)) 
@@ -75,7 +75,7 @@ $email=$_SESSION['email'];
         <h4><i class="fa-sharp fa-solid fa-house" style="color:#3b5998 ;"></i> Home</h4>
         <h4><i class="fa-regular fa-user"></i><?php echo $nameUser?></h4>
         <h4><i class="fa-sharp fa-solid fa-bars"></i>Menu</h4>
-        <h4><i class="fa-sharp fa-solid fa-user-group" style="color:#3b5998 ;"></i>Friends</h4>
+        <h4 id="friendShow"><i class="fa-sharp fa-solid fa-user-group" style="color:#3b5998 ;" ></i><a href="friend.php?id=<?php echo $email?>">Friends</a></h4>
         <h4><i class="fa-solid fa-people-group"></i>Groups</h4>
     </div>
     <div class="col2">
